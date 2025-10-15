@@ -36,7 +36,7 @@ public class GestionSimpleFichero {
             System.err.println("Error de E/S al operar con el fichero: " + e.getMessage());
             System.err.println("Verifica los permisos en: " + rutaDirectorio.getAbsolutePath());
         }
-
+/*
         // Opcional: limpieza (descomentar si quieres eliminar el fichero y directorio)
         if (rutaFichero.exists()) {
             if (rutaFichero.delete()) {
@@ -48,6 +48,6 @@ public class GestionSimpleFichero {
                 System.out.println("Directorio de prueba eliminado: " + rutaDirectorio.getName());
             }
         }
-
+*/
     }
 }
