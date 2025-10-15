@@ -1,0 +1,10 @@
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Archivos temporales
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
