@@ -1,7 +1,9 @@
 package ejemplo;
 
+//Estas clases vienen de la biblioteca Jackson, que sirve para convertir entre JSON y objetos Java.
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+//Estas son clases estándar de Java para trabajar con archivos.
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -10,14 +12,16 @@ import java.io.IOException;
 public class ProcesarJSONSimple {
 
     public static void main(String[] args) {
+        //Crea una carpeta llamada unidad1_ejemplos si no existe.
         File directorioEjemplo = new File("unidad1_ejemplos");
         if (!directorioEjemplo.exists()) {
             directorioEjemplo.mkdirs();
         }
 
+        //Define el archivo usuarioJSON.json dentro de esa carpeta.
         File archivoJSON = new File(directorioEjemplo, "usuarioJSON.json");
 
-        // 1. Crear el fichero JSON si no existe
+        // 1. Si el archivo no existe, lo crea con contenido JSON que representa a una persona llamada Elena.
         if (!archivoJSON.exists()) {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoJSON))) {
                 writer.write("{\n");
@@ -34,9 +38,10 @@ public class ProcesarJSONSimple {
             }
         }
 
-        // 2. Leer y parsear el fichero JSON usando Jackson
+        // 2. Leer y parsear el fichero JSON usando Jackson. ObjectMapper es la clase de Jackson que convierte entre JSON y objetos Java.
         ObjectMapper mapper = new ObjectMapper();
 
+        //3. Extraer datos del JSON
         try {
             System.out.println("Parseando: " + archivoJSON.getName());
             JsonNode rootNode = mapper.readTree(archivoJSON);
@@ -46,12 +51,13 @@ public class ProcesarJSONSimple {
             int edad = rootNode.get("edad").asInt();
             boolean activo = rootNode.get("activo").asBoolean();
 
+            // Imprime esos valores por consola
             System.out.println("Datos del usuario:");
             System.out.println(" Nombre: " + nombre);
             System.out.println(" Edad: " + edad);
             System.out.println(" Activo: " + activo);
 
-            // Acceder a un array
+            // Acceder a un array de hobbies y muestra cada hobbie
             JsonNode hobbiesNode = rootNode.get("hobbies");
             if (hobbiesNode != null && hobbiesNode.isArray()) {
                 System.out.print(" Hobbies: ");
