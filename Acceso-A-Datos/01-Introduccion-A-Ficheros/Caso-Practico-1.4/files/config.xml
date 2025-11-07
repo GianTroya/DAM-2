@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <nombre>Ejemplo</nombre>
+  <debug activado="true" />
+  <configInfo id="1" version="1.0" />
+  <parametro id="p1">valor1</parametro>
+  <parametro id="p2">valor2</parametro>
+</config>

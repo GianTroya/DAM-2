@@ -1,0 +1,92 @@
+import java.io.*;
+public class TablaBaseDatos {
+	private RandomAccessFile miTabla; 
+	private int númeroRegistros; 
+	private int longitudR = 52;
+	private int desplaza = 4; 
+	TablaBaseDatos (String tabla){
+	try { 	miTabla= new RandomAccessFile(tabla, "rw"); 
+		if ( miTabla.length() == 0) númeroRegistros= 0;
+	else númeroRegistros= miTabla.readInt(); 
+	}catch( IOException e) { e.getMessage (); }	}
+	public int dameNúmeroRegistros () { 
+		return númeroRegistros;		}
+	public Registro leeRegistro(int nRegistro) 
+throws IOException{
+		String nombre = ""; 
+		int edad; 
+		double peso; 
+		miTabla.seek((nRegistro-1)*longitudR+desplaza) ; 
+		for(int i =0; i<20; i++) 
+			nombre += miTabla.readChar(); 
+		edad = miTabla.readInt(); 
+		peso= miTabla.readDouble(); 
+		return (new Registro(nombre,edad,peso)); 		} 
+	public void escribeRegistro (String nombre,int edad, double peso,int nRegistro) 
+throws IOException{
+		int longitud = nombre.length(); 
+		miTabla.seek ((nRegistro-1) *longitudR+desplaza); 
+		for (int i=0; i< 20; i++) { 
+			if(i < longitud ) miTabla.writeChar(nombre.charAt(i)); 
+			else miTabla.writeChar(' '); 
+		} miTabla.writeInt (edad); 
+		miTabla.writeDouble (peso); 
+		númeroRegistros++;		}
+	public void cierraTabla() throws IOException{ 
+		miTabla.seek(0); 
+		miTabla.writeInt(númeroRegistros); 
+		miTabla.close();
+	}  }
+
+
+
+
+
+
+
+---------------------------------------------------
+
+
+public class Registro{
+		private String nombre;
+		private int edad;
+		private double peso;
+		Registro(String nom,int nEdad,double nPeso){
+			nombre = nom; 
+			edad = nEdad; 
+			peso = nPeso;
+		}
+		public String muestraRegistro() {
+			 return nombre +" "+ edad+ " "+ peso; 
+		}
+		public String dameNombre(){
+		return nombre; 
+		}	
+}
+
+
+-------------------------
+
+
+
+import java.util.*;
+public class VerTabla {
+	public static void main(String[] args) throws Exception {
+		 Scanner sc = new Scanner (System.in); 
+		 TablaBaseDatos t=new TablaBaseDatos("Datos.dir"); 
+		 System.out.print("Nombre: "); 
+		 String nombre=sc.nextLine (); 
+		 System.out.print("Edad: "); 
+		 int edad =sc.nextInt (); 
+		 System.out.print("Peso: "); 
+		 double peso = sc.nextDouble(); 
+		 int nR = t.dameNúmeroRegistros(); 
+		 nR++; 
+		 t.escribeRegistro(nombre,edad, peso, nR) ; 
+		 for (int i=1; i<= nR; i++) {
+			 Registro r = t.leeRegistro(i); 
+			 System.out .println(r.muestraRegistro());
+		 }
+	t.cierraTabla();
+	}
+}

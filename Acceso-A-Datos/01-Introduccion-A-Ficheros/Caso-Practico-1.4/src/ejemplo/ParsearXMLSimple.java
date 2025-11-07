@@ -55,6 +55,7 @@ public class ParsearXMLSimple {
                 if (nodo.getNodeType() == Node.ELEMENT_NODE) {
                     Element elemento = (Element) nodo;
                     String id = elemento.getAttribute("id");
+
                     String valor = elemento.getTextContent();
                     System.out.println("Parámetro encontrado -> ID: " + id + ", Valor: " + valor);
                 }

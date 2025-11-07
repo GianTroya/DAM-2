@@ -1,0 +1,44 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp">
+
+    <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Guardar"
+            android:onClick="onSaveClicked" />
+
+    <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Cancelar"
+            android:onClick="onCancelClicked" />
+
+    <Button
+            android:id="@+id/helpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Ayuda"
+            android:onClick="handleLoginClick" />
+
+</LinearLayout>
+
+<!--xmlns:android: Define el espacio de nombres XML para los atributos de Android.-->
+<!--android:layout_width="match_parent": El ancho del contenedor ocupará todo el ancho disponible del padre.-->
+<!--android:layout_height="wrap_content": La altura se ajustará al contenido.-->
+<!--android:orientation="horizontal": Los elementos hijos se colocarán uno al lado del otro, en línea horizontal.-->
+<!--android:padding="24dp": Aplica un relleno interno de 24dp en todos los lados.-->
+
+<!--android:id="@+id/saveBtn": Identificador único para referenciar este botón en el código Java/Kotlin.-->
+<!--android:layout_width="wrap_content" / layout_height="wrap_content": El botón se ajusta al tamaño de su contenido.-->
+<!--android:layout_marginEnd="8dp": Margen derecho de 8dp para separar del siguiente botón.-->
+<!--android:text="Guardar": Texto visible en el botón.-->
+<!--android:onClick="onSaveClicked": Método que se ejecuta al hacer clic, definido en el archivo de actividad.-->
