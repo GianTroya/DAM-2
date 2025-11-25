@@ -16,7 +16,7 @@ public class Main {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -24,36 +24,37 @@ public class Main {
 
 
 
-    // metodo para insertar empleado
+    // INSERTAR EMPLEADO
     public static void insertarEmpleado(Connection connection, Empleado empleado) {
         try {
             PreparedStatement insert = connection.prepareStatement("INSERT INTO empleados VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            insert.setString(1, empleado.nombre);
-            insert.setString(2, empleado.puesto);
-            insert.setString(3, empleado.tipoJornada);
-            insert.setString(4, empleado.email);
-            insert.setString(5, empleado.telefono);
-            insert.setDate(6, Date.valueOf(empleado.fechaContratacion));
-            insert.setDouble(7, empleado.salarioHora);
-            insert.setBoolean(8, empleado.activo);
+            insert.setString(1, empleado.getNombre());
+            insert.setString(2, empleado.getPuesto());
+            insert.setString(3, empleado.getTipoJornada());
+            insert.setString(4, empleado.getEmail());
+            insert.setString(5, empleado.getTelefono());
+            insert.setDate(6, Date.valueOf(empleado.getFechaContratacion()));
+            insert.setDouble(7, empleado.getSalarioHora());
+            insert.setBoolean(8, empleado.isActivo());
             insert.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("Error al insertar empleado: " + e.getMessage());
         }
     }
 
 
-
+    // BORRAR EMPLEADO
     public static void borrarEmpleado(Connection connection, int id) {
-        try {
-            PreparedStatement delete = connection.prepareStatement("DELETE FROM empleados WHERE id_empleado = ?");
+        try(PreparedStatement delete = connection.prepareStatement("DELETE FROM empleados WHERE id_empleado = ?")) {
+            delete.setInt(1,1);
+            delete.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("Error al borrar empleado: " + e.getMessage());
         }
     }
 
 
-
+    // BUSCAR EMPLEADO
     public static void buscarEmpleado(Connection connection, int id) {
         try (PreparedStatement select = connection.prepareStatement("SELECT * FROM empleados WHERE id_empleado = ?")) {
             select.setInt(1, id);
@@ -76,7 +77,7 @@ public class Main {
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("Error al seleccionar empleado: " + e.getMessage());
         }
     }
 }
