@@ -4,7 +4,8 @@ public class GestionEmpleado {
     // INSERTAR EMPLEADO
     public static void insertarEmpleado(Connection connection, Empleado empleado) {
         try {
-            PreparedStatement insert = connection.prepareStatement("INSERT INTO empleados VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement insert = connection.prepareStatement("INSERT INTO empleados (nombre, puesto, tipo_jornada, email, telefono, fecha_contratacion, salario_hora, activo)" +
+                                                                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             insert.setString(1, empleado.getNombre());
             insert.setString(2, empleado.getPuesto());
             insert.setString(3, empleado.getTipoJornada());
