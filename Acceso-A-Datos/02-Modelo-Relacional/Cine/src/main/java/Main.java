@@ -7,7 +7,7 @@ public class Main {
         try (Connection connection = Conexion.obtenerConnection()) {
 
                 // 2. insertamos un nuevo empleado
-                GestionEmpleado.insertarEmpleado(connection, new Empleado("Juan Pérez", "Seguridad", "Tiempo Completo", "juan.perez@cine.com", "555100024", LocalDate.of(2025, 10, 10), 75.00, true));
+                GestionEmpleado.insertarEmpleado(connection, new Empleado("Juan Pérez", "Seguridad", "Tiempo completo", "juan.perez@cine.com", "555100024", LocalDate.of(2025, 10, 10), 75.00, true));
                 // 3. eliminamos un empleado
                 GestionEmpleado.borrarEmpleado(connection, 1);
                 // 4. hacemos una select
