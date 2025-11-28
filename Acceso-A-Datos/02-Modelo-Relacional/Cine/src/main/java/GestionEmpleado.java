@@ -37,7 +37,7 @@ public class GestionEmpleado {
             select.setInt(1, id);
             //guardamos en memoria el resultado de los datos que pedimos
             try (ResultSet resultSet = select.executeQuery();) {
-                // intentamos creamos un bucle para recorrer todos los registros, hasta que no haya más.
+                // intentamos creamos un bucle para recorrer todos los registros (en este caso solo 1), hasta que no haya más.
                 while (resultSet.next()) {
                     Empleado empleado = new Empleado(
                             resultSet.getInt("id_empleado"),
