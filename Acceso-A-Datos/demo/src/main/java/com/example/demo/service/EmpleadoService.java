@@ -11,11 +11,12 @@ import java.util.Optional;
 public class EmpleadoService {
     private final EmpleadoRepository empleadoRepository;
 
-    public List<Empleado> listarEmpleados() {
-        return empleadoRepository.findAll();
-    }
     public EmpleadoService(EmpleadoRepository empleadoRepository) {
         this.empleadoRepository = empleadoRepository;
+    }
+
+    public List<Empleado> listarEmpleados() {
+        return empleadoRepository.findAll();
     }
 
     public Optional<Empleado> buscarEmpleado(Integer id) {
