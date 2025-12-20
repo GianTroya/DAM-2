@@ -1,0 +1,4 @@
+node lovenote.js
+
+hay que ejecutarlo, este hereda del otro y le pone valores
+

@@ -1,0 +1,6 @@
+cuando hay que instalar una dependencia, que no sea
+la versión del lenguaje, o algo muy generico
+se instala con npn install mipaquete --save
+este --save, hace que el package json incorpore la dependencia
+de manera que en otro equipo otra persona con npm install
+cargue todas las dependencias en su másuina

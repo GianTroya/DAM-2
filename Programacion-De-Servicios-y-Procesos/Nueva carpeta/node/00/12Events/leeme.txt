@@ -1,0 +1,51 @@
+ejemplo de event emmiter donde simula un latido de corazón
+node pulsed.js
+este lee el otro e imprime por consola esto
+Un código que emite eventos que otro puede recibir
+es una manera de conectar dos secciones del programa
+
+> node pulsed.js
+
+
+2023-05-16T06:51:38.016Z >>>> pulse
+2023-05-16T06:51:38.029Z pulse received
+2023-05-16T06:51:38.032Z <<<< pulse
+2023-05-16T06:51:39.017Z >>>> pulse
+2023-05-16T06:51:39.019Z pulse received
+2023-05-16T06:51:39.021Z <<<< pulse
+2023-05-16T06:51:40.020Z >>>> pulse
+2023-05-16T06:51:40.020Z pulse received
+2023-05-16T06:51:40.021Z <<<< pulse
+2023-05-16T06:51:41.033Z >>>> pulse
+2023-05-16T06:51:41.034Z pulse received
+2023-05-16T06:51:41.035Z <<<< pulse
+2023-05-16T06:51:42.043Z >>>> pulse
+2023-05-16T06:51:42.044Z pulse received
+2023-05-16T06:51:42.044Z <<<< pulse
+2023-05-16T06:51:43.057Z >>>> pulse
+2023-05-16T06:51:43.060Z pulse received
+2023-05-16T06:51:43.067Z <<<< pulse
+2023-05-16T06:51:44.080Z >>>> pulse
+2023-05-16T06:51:44.082Z pulse received
+2023-05-16T06:51:44.085Z <<<< pulse
+2023-05-16T06:51:45.090Z >>>> pulse
+2023-05-16T06:51:45.091Z pulse received
+2023-05-16T06:51:45.092Z <<<< pulse
+2023-05-16T06:51:46.104Z >>>> pulse
+2023-05-16T06:51:46.105Z pulse received
+2023-05-16T06:51:46.106Z <<<< pulse
+2023-05-16T06:51:47.108Z >>>> pulse
+2023-05-16T06:51:47.109Z pulse received
+2023-05-16T06:51:47.109Z <<<< pulse    
+2023-05-16T06:51:48.122Z >>>> pulse
+2023-05-16T06:51:48.122Z pulse received
+2023-05-16T06:51:48.123Z <<<< pulse
+2023-05-16T06:51:49.125Z >>>> pulse
+2023-05-16T06:51:49.126Z pulse received
+2023-05-16T06:51:49.127Z <<<< pulse
+2023-05-16T06:51:50.126Z >>>> pulse
+2023-05-16T06:51:50.127Z pulse received
+2023-05-16T06:51:50.127Z <<<< pulse
+2023-05-16T06:51:51.132Z >>>> pulse
+2023-05-16T06:51:51.133Z pulse received
+2023-05-16T06:51:51.135Z <<<< pulse

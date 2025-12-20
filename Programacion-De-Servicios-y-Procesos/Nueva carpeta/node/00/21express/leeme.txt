@@ -1,0 +1,40 @@
+npm init
+inicializa un nuevo package.json
+a través de sistema de diálogo por consola
+
+--
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (nombreCarpeta)
+
+---
+
+entry point: o index.js o lo que quieran, 
+pero tiene que llamarlo luego así (el .js)
+ npm install express (ya está instalado)
+ y el resto e depandencias, 
+ como está todo en el package JSON, ejecutamos
+
+
+npm install
+
+esto intala node_modules (una carpeta llena de componentes)
+
+
+
+node index.js
+(si lo llamasteis así)
+
+dirigirse a localhost y el puerto que dice en consola
+
+http://localhost:3000/
+
+imprime hola mundo..
