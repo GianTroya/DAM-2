@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ public class Entrada {
     // atributo clave primaria
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Integer idEntrada;
 
     // relación con Proyección

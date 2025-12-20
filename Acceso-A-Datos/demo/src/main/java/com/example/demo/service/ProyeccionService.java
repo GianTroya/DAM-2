@@ -20,12 +20,20 @@ public class ProyeccionService {
         return proyeccionRepository.findAll();
     }
 
-    public Optional<Proyeccion> buscarProyeccion(Integer id) {
-        return proyeccionRepository.findById(id);
+    public Proyeccion buscarProyeccion(Integer id) {
+        return proyeccionRepository.findById(id).orElseThrow(() -> new RuntimeException("Proyección no encontrada"));
     }
 
     public Proyeccion insertarProyeccion(Proyeccion proyeccion) {
         return proyeccionRepository.save(proyeccion);
+    }
+
+    public void restarAsiento(Proyeccion proyeccion) {
+        if (proyeccion.getAsientosDisponibles()<=0) {
+            throw new RuntimeException("No hay asientos disponibles");
+        } else {
+            proyeccion.setAsientosDisponibles(proyeccion.getAsientosDisponibles()-1);
+        }
     }
 
     public void borrarProyeccion(Integer id) {

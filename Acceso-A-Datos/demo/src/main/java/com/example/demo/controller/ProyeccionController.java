@@ -23,7 +23,7 @@ public class ProyeccionController {
 
     @GetMapping ("/{id}")
     public Proyeccion buscarPorId(@PathVariable Integer id) {
-        return proyeccionService.buscarProyeccion(id).orElseThrow(() -> new RuntimeException("Proyeccion no encontrada"));
+        return proyeccionService.buscarProyeccion(id);
     }
 
     @PostMapping
