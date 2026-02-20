@@ -1,0 +1,37 @@
+{
+  "empleados": [
+    {
+        "id_empleado": 2,
+        "nombre": "Ana Rodríguez",
+        "puesto": "Subgerente",
+        "tipo_jornada": "Tiempo completo",
+        "email": "ana.rodriguez@cine.com",
+        "telefono": "555100002",
+        "fecha_contratacion": "2022-02-05",
+        "salario_hora": 130.00,
+        "activo": true
+    },
+    {
+        "id_empleado": 3,
+        "nombre": "Luis Fernández",
+        "puesto": "Administrador General",
+        "tipo_jornada": "Tiempo completo",
+        "email": "luis.fernandez@cine.com",
+        "telefono": "555100003",
+        "fecha_contratacion": "2021-09-12",
+        "salario_hora": 140.00,
+        "activo": true
+    },
+    {
+        "id_empleado": 4,
+        "nombre": "Paula Herrera",
+        "puesto": "Contadora",
+        "tipo_jornada": "Medio tiempo",
+        "email": "paula.herrera@cine.com",
+        "telefono": "555100004",
+        "fecha_contratacion": "2023-03-08",
+        "salario_hora": 95.00,
+        "activo": true
+    }
+  ]
+}

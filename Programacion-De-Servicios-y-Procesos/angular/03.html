@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- se escribe en la etiqueta html ng-app -->
+<!-- añadimos una variable por defecto -->
+<!-- 4 quitamos las variables que las crearemos interactivas -->
+<html lang="en" ng-app >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cuarto</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div>
+    <h1>Velocidades</h1>
+    <input type="text" ng-model="velocidad_maxima" placeholder="Ingrese velocidad máxima">
+      <input type="text" ng-model="velocidad_comprobada" placeholder="Ingrese velocidad comprobada">
+<h3>Velocidad máxima permitida {{velocidad_maxima}}</h3>
+ <h3>Velocidad constatada {{velocidad_comprobada}}</h3>
+ <hr>
+     <h1>Rebasamiento de velocidad</h1>
+     <h3>el vehículo circuulaba {{velocidad_comprobada - velocidad_maxima}} por sobre la velocidad permitida</h3>
+    </div>
+</body>
+</html>
